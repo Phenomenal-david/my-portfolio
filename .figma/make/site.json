@@ -1,0 +1,10 @@
+{
+  "description": "Delivers a seamless scrolling experience with dynamic design elements that extend fluidly, enhancing user engagement and visual appeal throughout the site.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

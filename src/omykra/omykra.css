@@ -1,0 +1,135 @@
+/* OmyKra showcase: fonts, type utilities and keyframes.
+   Import this file right after `@import 'tailwindcss';` in your global CSS. */
+
+@font-face {
+  font-family: 'Inter:Regular';
+  src: url('https://static.figma.com/font/Inter_1') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter:Medium';
+  src: url('https://static.figma.com/font/Inter_1') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter:Semi Bold';
+  src: url('https://static.figma.com/font/Inter_1') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spectral:Medium';
+  src: url('https://static.figma.com/font/Spectral-Medium_2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spectral:SemiBold';
+  src: url('https://static.figma.com/font/Spectral-SemiBold_2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@utility font-inter {
+  font-family: 'Inter:Regular', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+}
+@utility font-inter-medium {
+  font-family: 'Inter:Medium', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+}
+@utility font-inter-semibold {
+  font-family: 'Inter:Semi Bold', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+}
+@utility font-spectral-medium {
+  font-family: 'Spectral:Medium', ui-serif, Georgia, serif;
+  font-weight: 500;
+}
+@utility font-spectral {
+  font-family: 'Spectral:SemiBold', ui-serif, Georgia, serif;
+  font-weight: 600;
+}
+
+@theme {
+  --color-omy-forest: #084734;
+  --color-omy-green: #00ab45;
+  --color-omy-lime: #cef17b;
+  --color-omy-grey: #808080;
+  --shadow-omy-card: -7px 24px 48px 0px rgba(0, 0, 0, 0.1);
+
+  --animate-omy-marquee: omy-marquee 32s linear infinite;
+  --animate-omy-drift: omy-drift 18s ease-in-out infinite alternate;
+  --animate-omy-float: omy-float 6s ease-in-out infinite;
+  --animate-omy-shimmer: omy-shimmer 2.4s ease-in-out infinite;
+  --animate-omy-bob: omy-bob 3.2s ease-in-out infinite;
+  --animate-omy-pulse: omy-pulse 4s ease-in-out infinite;
+
+  @keyframes omy-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes omy-drift {
+    from {
+      transform: translate3d(-24px, 0, 0);
+    }
+    to {
+      transform: translate3d(24px, -12px, 0);
+    }
+  }
+  @keyframes omy-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes omy-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  @keyframes omy-bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+  @keyframes omy-pulse {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: translate(-50%, 0) scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: translate(-50%, 0) scale(1.06);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .omy-root *,
+  .omy-root *::before,
+  .omy-root *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

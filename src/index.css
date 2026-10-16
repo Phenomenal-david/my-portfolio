@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@import './omykra/omykra.css';
+
+/* PP Editorial New (from the Alika design) could not be resolved for this file,
+   so Instrument Serif is used as the fallback. If PP Editorial New is installed
+   locally or added later, it is picked up first. */
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@utility font-editorial {
+  font-family: 'PP Editorial New', 'Instrument Serif', ui-serif, Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+@utility font-editorial-italic {
+  font-family: 'PP Editorial New', 'Instrument Serif', ui-serif, Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@theme {
+  --color-alika-blue: #2457ff;
+  --color-alika-ink: #0a0a0a;
+  --color-alika-paper: #f5f4ef;
+  --animate-alika-rise: alika-rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes alika-rise {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0);
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+}
+
+html,
+body {
+  margin: 0;
+  background: #f5f4ef;
+}
+
+@keyframes alika-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
