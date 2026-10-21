@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-import { a } from './assets'
+import { a } from './assets.ts'
 import { LiveContext } from './motion'
 import OmyKraSite from './OmyKraSite'
 

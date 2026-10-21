@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState, type CSSProperties, type PointerEvent, type ReactNode, type RefObject } from 'react'
-import { a } from './assets'
+import { a } from './assets.ts'
 import { CountUp, DesignFrame, LiveContext, Reveal, StaticContext, useInView, zoomOf } from './motion'
 
 /* ------------------------------------------------------------------ */
