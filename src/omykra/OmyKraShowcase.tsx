@@ -1,4 +1,15 @@
+/** @jsxRuntime classic */
+import * as React from 'react'
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elementName: string]: any
+    }
+  }
+}
+
 import { a } from './assets'
 import { LiveContext } from './motion'
 import OmyKraSite from './OmyKraSite'
